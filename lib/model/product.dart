@@ -14,4 +14,9 @@ class Product{
         category: json['category'],
         price: json['price']);
   }
+
+  @override
+  String toString() {
+    return '{ ${this.productID}, ${this.productName},${this.category},${this.price} }';
+  }
 }
