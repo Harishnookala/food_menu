@@ -12,9 +12,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: MyHomePage(title: 'Food Menu'),
     );
   }
@@ -43,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           children: <Widget>[
             FutureBuilder<List<Product>>(
-              future: Response.load_product(context),
+              future: Request.load_product(context),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   List<Product> menu;
