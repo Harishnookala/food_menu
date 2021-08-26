@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+
       home: MyHomePage(title: 'Food Menu'),
     );
   }
@@ -48,7 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   List<Widget> children = [];
                   String category;
                   menu.sort((a, b) => a.category.compareTo(b.category));
+
+
                   menu.forEach((products) {
+                    print(products.category);
                     if (products.category != category) {
                       children.add(Container(
                           child: Text(
@@ -64,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ));
                       category = products.category;
                     }
+
                     children.add(Container(
                       margin: EdgeInsets.all(13.3),
                       child: Container(
