@@ -49,7 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   List<Widget> children = [];
                   String category = null;
                   menu.sort((a, b) => a.category.compareTo(b.category));
-                  print(menu);
                   menu.forEach((products) {
                     if (products.category != category) {
                       children.add(Container(
@@ -73,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(products.productName),
+                            Text(products.productName,style: TextStyle(fontSize: 15),),
                             Text("\u20B9 " + products.price.toString())
                           ],
                         ),
