@@ -4,7 +4,7 @@ import 'model/product.dart';
 
 void main() {
   runApp(MyApp());
-}
+} 
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -47,12 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   List<Product> menu;
                   menu = snapshot.data;
                   List<Widget> children = [];
-                  String category;
+                  String category = null;
                   menu.sort((a, b) => a.category.compareTo(b.category));
-
-
+                  print(menu);
                   menu.forEach((products) {
-                    print(products.category);
                     if (products.category != category) {
                       children.add(Container(
                           child: Text(

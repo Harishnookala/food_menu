@@ -4,8 +4,8 @@ import 'dart:convert';
 
 class Request{
    static Future<List<Product>> load_product(BuildContext context) async{
-     String json_data = await DefaultAssetBundle.of(context).loadString("jsonData/sample.json");
-     final jsonResult = json.decode(json_data) as List;
+     String jsonData = await DefaultAssetBundle.of(context).loadString("json/sample.json");
+     final jsonResult = json.decode(jsonData) as List;
      List<Product> result =
      jsonResult.map((i) => Product.fromJson(i)).toList();
      return result;
